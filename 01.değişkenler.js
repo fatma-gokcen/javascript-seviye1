@@ -265,3 +265,59 @@ const hepsiCiftMi = sayilar9.every(sayi => sayi % 2 === 0)
 console.log(hepsiCiftMi)
 
 
+// THİS BAĞLAMI 
+// this, o anki çalıştırılan kodun bağlamını (context) temsil eder.
+// Hangi nesne üzerinde çalışıyorsak, this onu gösterir.
+
+const kisi = {
+    isim: "Fatma",
+    yas: 21,
+    selamla: function () {
+        console.log(`Merhaba, ben ${this.isim}`);
+    }
+};
+
+kisi.selamla(); // Merhaba, ben Fatma
+
+// SCOPE KAVRAMI = Değişenin erişilebilir olduğu alan 3 'e ayrılır: Global Scope,Function Scope, Block Scope
+
+// 1. Global Scope: Her yerden erişilebilir
+
+let globalDeğişken = "ben globalim"
+
+function test() {
+    console.log(globalDeğişken)
+}
+test();
+console.log(globalDeğişken);
+
+// 2. Function Scope : Fonksiyonun içinde tanımlana  değer sadece fonksiyonun içinden erişilebilir.
+
+function test() {
+    let localDeğişken = "Ben fonksiyon içindeyim"
+    console.log(localDeğişken)
+}
+test();
+// console.log(localDeğişken)  çalışmaz çünkü foksiyon dışında
+
+
+// 3. Block Scope : {} içinde tanımlana değişken sadece o blokta görülür.
+if (true) {
+    let blockDeğişken = "Ben blok içindeyim"
+    console.log(blockDeğişken)
+}
+
+// console.log(blockDeğişken) çalışmaz çünkü {} içinde değil.
+
+
+
+// HOSTİNG VE TEMPORAL DEAD ZONE (TDZ)
+// Hoisting → var ile tanımlanan değişkenler veya function declaration’lar, tanımlandıkları yerden önce çalışabilir gibi davranır.
+
+// Temporal Dead Zone(TDZ) → let ve const ile tanımlanan değişkenler, önce tanımlanır sonra kullanılırlar. tanımlanmadan önce kullanılırsa hata verir.
+
+console.log(u); // undefined
+var u = 10;
+
+// console.log(o); // hata
+// let o = 20;
