@@ -186,10 +186,82 @@ console.log("30'un karesi:", karesiniAl1(30))
 // Bir fonksiyon başka bir fonksiyonu alabilir veya döndürebilir.
 // map,filter,reduce gibi array metodlarının hepsi higher order functiondur.
 
-// map örneği
-const sayilar = [1, 3, 4, 6, 9, 8, 6, 7, 5, 23, 45, 78]
-const kareler = sayilar.map(sayi => sayi * sayi)
-console.log(kareler)
+// 1. Higher Order==Map(): Map bir array i alır ve her elemanı üzerinde tek tek gezinir ve işlem yapar. yeni bir array oluşturur., orjinal arrayi değiştirmez!
 
+
+// map örneği
+// const sayilar = [1, 3, 4, 6, 9, 8, 6, 7, 5, 23, 45, 78]
+// const kareler = sayilar.map(sayi => sayi * sayi)
+// console.log(kareler)
+
+const sayilar1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const küpler = sayilar1.map(sayi => sayi ** 3)
+console.log(küpler)
+
+// 2. Higher Order == Filter(): Bir arrayi süzer ve belli bir koşula göre filtreleme yapar ve yeni bir array olarak döndürür. Orjinal arraye dokunmaz!
+
+
+const sayilar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const ciftSayilar = sayilar.filter(sayi => sayi % 2 === 0)
+console.log(ciftSayilar)
+
+const sayilar2 = [3, 7, 12, 18, 21]
+const ondanBüyük = sayilar2.filter(sayi => sayi > 10)
+console.log(ondanBüyük)
+
+// 3. Higher Order == Reduce() : Arrayi tek bir değere indirger.  Yeni bir Array üretmez. 
+
+// acc = accumulator = birikmiş değerler
+
+const sayilar3 = [55, 66, 77, 1];
+const toplam3 = sayilar3.reduce((acc, sayi) => acc + sayi, 0)
+console.log(toplam3)
+
+const sayilar4 = [55, 66, 77, 1];
+const carpim4 = sayilar4.reduce((acc, sayi) => acc * sayi, 1)
+console.log(carpim4)
+
+// map,filter, reduce
+
+const sayilar5 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const ciftSayi = sayilar5.filter(sayi => sayi % 2 === 0)
+console.log(ciftSayi)
+
+const küpünüAl = ciftSayi.map(sayi => sayi ** 3)
+console.log(küpünüAl)
+
+const topla = küpünüAl.reduce((acc, sayi) => acc + sayi, 0)
+console.log(topla)
+
+// kısa yol = map,filter,reduce
+
+const sayilar6 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const toplaCiftKupler = sayilar6
+    .filter(sayi => sayi % 2 == 0)
+    .map(sayi => sayi ** 3)
+    .reduce((acc, sayi) => acc + sayi, 0)
+console.log(toplaCiftKupler)
+
+
+//4. Higher Order == ForeEach(): Her elemanı tek tek işlemek için kullanılır. Yeni değer döndürmez, sadece yan etki yapar.
+sayilar1.forEach(sayi => console.log(sayi ** 2));
+
+// 5. Higher Order == find(): Koşula uayn ilk elemanı bulmak için kullanılır, arrayda koşula uyan başka elemanlar olsa bile onları döndürmüyor sadece ilk elemanı döndürüyor. Eğer hiçbir koşul sağlanmazsa undefined döner.
+
+const sayilar7 = [1, 4, 5, 9, 7, 3]
+const ilkBüyük = sayilar7.find(sayi => sayi > 1)
+console.log(ilkBüyük)
+
+// 6. Higher Order == some(): arraydeki en az tek bir eleman koşulu sağlıyorsa "true" aksi halde "false" döner.
+
+const sayilar8 = [1, 2, 3, 4, 5, 6, 6, 8, 9]
+const varMi = sayilar8.some(sayi => sayi > 8)
+console.log(varMi)
+
+// 7. Higher Order == every(): arraydeki "tüm elemanlar" koşulu sağlıyorsa true, en az biri sağlamazsa false döner.
+
+const sayilar9 = [1, 3, 5, 8, 5, 6, 9]
+const hepsiCiftMi = sayilar9.every(sayi => sayi % 2 === 0)
+console.log(hepsiCiftMi)
 
 
