@@ -394,3 +394,20 @@ const kisi2 = { bolum: "MIS", sehir: "Ankara" };
 const birlesikKisi = Object.assign({}, kisi1, kisi2);
 console.log(birlesikKisi);
 
+// for..of
+//Diziler üzerinde eleman gezmek için kullanılır.
+// İndexe gerek olmadan direkt değerleri verir.
+
+const meyverler = ["erik", "çilek", "muz"];
+for (const meyve of meyverler) {
+    console.log(meyve)
+}
+
+// for...in
+//Nesneler üzerinde anahtarları(key) gezmek için kullanılır.
+
+const ogrenciler = ["Fatma", "Elif", "Hilal"];
+for (const key in ogrenciler) {
+    console.log(key, ":", ogrenciler[key]);
+
+}
