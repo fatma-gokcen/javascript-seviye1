@@ -376,3 +376,21 @@ const [ilk, iki, ...kalanlar] = [10, 20, 30, 40, 50];
 console.log(ilk); // 10
 console.log(iki); // 20
 console.log(kalanlar); // [30, 40, 50]
+
+// Object.keys, Object.entries, Object.assign
+//1. Object.keys → Bir nesnenin sadece anahtarlarını (key) bir dizi olarak verir.
+
+const ogrenci3 = { isim: "Ali", sehir: "Manisa", yas4: 22 }
+console.log(Object.keys(ogrenci3))
+
+// 2. Object.entries → Bir nesnenin [anahtar, değer] çiftlerini bir dizi olarak verir.
+console.log(Object.entries(ogrenci));
+
+// 3. Object.assign → Nesneleri birleştirmek veya kopyalamak için kullanılır.
+
+const kisi1 = { isim: "Ayşe", yas: 20 };
+const kisi2 = { bolum: "MIS", sehir: "Ankara" };
+
+const birlesikKisi = Object.assign({}, kisi1, kisi2);
+console.log(birlesikKisi);
+
