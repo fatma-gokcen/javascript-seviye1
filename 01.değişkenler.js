@@ -186,6 +186,7 @@ console.log("30'un karesi:", karesiniAl1(30))
 // Bir fonksiyon başka bir fonksiyonu alabilir veya döndürebilir.
 // map,filter,reduce gibi array metodlarının hepsi higher order functiondur.
 
+
 // 1. Higher Order==Map(): Map bir array i alır ve her elemanı üzerinde tek tek gezinir ve işlem yapar. yeni bir array oluşturur., orjinal arrayi değiştirmez!
 
 
@@ -321,3 +322,57 @@ var u = 10;
 
 // console.log(o); // hata
 // let o = 20;
+
+// Object destructuring / array destructuring
+// Destructuring bir object veya array dan değerleri kolayca ayrı değişkenlere çıkarmamızı sağlar. Yazım çok kısalıyor.
+
+// Object Destructuring örneği
+const ogrenci = {
+    isimOgr: "Zeynep",
+    yasOgr: 20,
+    bolum: "YBS",
+    sehirOgr: "Ankara"
+};
+
+const { isimOgr, yasOgr, bolum, sehirOgr } = ogrenci;
+console.log(isimOgr);
+console.log(yasOgr);
+console.log(bolum);
+console.log(sehirOgr);
+
+
+// Array Destructing örneği
+const renkler = ["kırmızı", "mavi", "beyaz"];
+const [birinci, ikinci, ucuncu] = renkler;
+// tek satırda index vermeden tanımlayabiliyoruz.
+console.log(birinci)
+console.log(ikinci)
+console.log(ucuncu)
+
+
+// SPREAD VE REST OPERATÖRÜ
+
+// Spread operatörü bir diziyi veya nesneyi tek tek elemanlarına "ayırmak için kullanılır. "..." bu üç nokta yapıyı yaymak için kullanılır"
+
+// Spread örneği
+const sayilar10 = [1, 2, 3]
+const yeniSayilar = [...sayilar10, 4, 5]
+console.log(yeniSayilar)
+
+const ogrenci1 = { isim: "Fatma", yas: "21" }
+const yeniOgrenci = { ...ogrenci1, bölüm: "MIS" }
+console.log(yeniOgrenci)
+
+//  Rest operatörü de aynı ... sembolünü kullanır ama farklı bir amaçla:  Birden fazla değeri tek bir dizi veya nesne içinde toplar.
+
+
+function topla1(...sayilar11) {
+    return sayilar11.reduce((a, b) => a + b)
+}
+
+console.log(topla1(2, 4, 6))
+
+const [ilk, iki, ...kalanlar] = [10, 20, 30, 40, 50];
+console.log(ilk); // 10
+console.log(iki); // 20
+console.log(kalanlar); // [30, 40, 50]
