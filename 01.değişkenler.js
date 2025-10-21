@@ -411,3 +411,38 @@ for (const key in ogrenciler) {
     console.log(key, ":", ogrenciler[key]);
 
 }
+
+// Break and Continue
+//Break: Döngüyü hemen durdurur.
+// Genellikle belli koşula ulaştığında kullanılır.
+
+for (let i = 1; i <= 10; i++) {
+    if (i === 9) {
+        break;
+    }
+    console.log(i)
+}
+
+// continue
+// Döngüde o anki turu atlar, sonraki adıma geçer.
+for (let sayi = 0; sayi < 20; sayi++) {
+    if (sayi === 15) {
+        continue;
+    }
+    console.log(sayi)
+}
+
+// Ternary Operator
+// Basic bir if else yapısını tek satırda yazabiliriz.
+//koşul ? koşul doğruysa yapılacak : koşul yanlışsa yapılacak
+
+let yas5 = 21;
+let mesaj = yas5 > 18 ? "Reşitsiniz" : "Reşit değilsiniz";
+console.log(mesaj)
+
+let rakam = 5;
+console.log(rakam > 3 ? "3den büyüktür" : "Küçüktür.")
+
+let sayi6 = 9;
+let sonuc1 = (sayi6 % 2 === 0) ? "Cifttir" : "tektir"
+console.log(sonuc1)
